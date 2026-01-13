@@ -7,7 +7,7 @@
 }
 
 .quantity-selector.small {
-  height: 32px;
+  height: 28px;
 }
 
 .quantity-selector.medium {
@@ -33,9 +33,9 @@
 }
 
 .quantity-selector.small .qty-btn {
-  width: 32px;
-  height: 32px;
-  font-size: 1.3rem;
+  width: 28px;
+  height: 28px;
+  font-size: 1.1rem;
 }
 
 .quantity-selector.medium .qty-btn {
@@ -67,8 +67,8 @@
 }
 
 .quantity-selector.small .qty-value {
-  font-size: 0.95rem;
-  min-width: 28px;
+  font-size: 0.875rem;
+  min-width: 24px;
 }
 
 .quantity-selector.medium .qty-value {
