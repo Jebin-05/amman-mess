@@ -1,0 +1,10 @@
+{
+  "name": "amman-mess",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm run start --prefix client",
+    "start": "npm run start --prefix client",
+    "build": "npm run build --prefix client",
+    "install:client": "npm install --prefix client"
+  }
+}

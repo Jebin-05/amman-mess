@@ -1,0 +1,463 @@
+/* ===================================
+   HOMEPAGE - MOBILE FIRST APPROACH
+   =================================== */
+
+/* Base styles for mobile (320px+) */
+.homepage {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  height: -webkit-fill-available;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFA500;
+}
+
+/* Start Ordering Button */
+.start-ordering-btn {
+  position: absolute;
+  bottom: 29%;
+  right: 12%;
+  background: linear-gradient(135deg, #FFA500 0%, #ff8c00 100%);
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 18px 50px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(255, 165, 0, 0.5);
+  transition: all 0.3s ease;
+  z-index: 10;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: buttonEntry 0.8s ease forwards, buttonBlink 1.5s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.start-ordering-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 2s ease-in-out infinite;
+}
+
+@keyframes buttonEntry {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes buttonBlink {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 8px 30px rgba(255, 165, 0, 0.5);
+  }
+  50% {
+    opacity: 0.85;
+    box-shadow: 0 8px 60px rgba(255, 165, 0, 1), 0 0 40px rgba(255, 165, 0, 0.8), 0 0 80px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+.start-ordering-btn:hover {
+  background: linear-gradient(135deg, #ff8c00 0%, #e67e00 100%);
+  box-shadow: 0 12px 40px rgba(255, 165, 0, 0.7);
+  transform: translateY(-4px) scale(1.05);
+}
+
+.start-ordering-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 20px rgba(255, 165, 0, 0.5);
+}
+
+/* Background image - optimized for all devices */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  margin: 0;
+  padding: 0;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ===================================
+   RESPONSIVE BREAKPOINTS (Mobile-First)
+   =================================== */
+
+/* Extra small phones (320px - 479px) */
+@media (min-width: 320px) and (max-width: 479px) {
+  .homepage {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .start-ordering-btn {
+    font-size: 1rem;
+    padding: 14px 36px;
+    bottom: 10%;
+  }
+}
+
+/* Small phones landscape / Large phones portrait (480px+) */
+@media (min-width: 480px) {
+  .homepage {
+    height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* Tablets portrait (768px+) */
+@media (min-width: 768px) {
+  .homepage {
+    height: 100vh;
+  }
+
+  .hero-section {
+    min-height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .start-ordering-btn {
+    font-size: 1.2rem;
+    padding: 18px 50px;
+  }
+}
+
+/* Tablets landscape / Small desktop (1024px+) */
+@media (min-width: 1024px) {
+  .homepage {
+    height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* Desktop (1440px+) */
+@media (min-width: 1440px) {
+  .homepage {
+    height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .start-ordering-btn {
+    font-size: 1.3rem;
+    padding: 20px 60px;
+  }
+}
+
+/* Large desktop / 2K (1920px+) */
+@media (min-width: 1920px) {
+  .homepage {
+    height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* 4K / Ultra-wide (2560px+) */
+@media (min-width: 2560px) {
+  .homepage {
+    height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* 5K+ (3840px+) */
+@media (min-width: 3840px) {
+  .homepage {
+    height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* ===================================
+   ORIENTATION SPECIFIC FIXES
+   =================================== */
+
+/* Portrait mode - all devices */
+@media (orientation: portrait) {
+  .homepage {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+
+  .hero-section {
+    height: 100%;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Landscape mode - all devices */
+@media (orientation: landscape) {
+  .homepage {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .hero-section {
+    height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Short landscape screens (mobile landscape) */
+@media (orientation: landscape) and (max-height: 600px) {
+  .homepage {
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* Tall portrait screens */
+@media (orientation: portrait) and (min-height: 800px) {
+  .homepage {
+    height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* ===================================
+   DEVICE SPECIFIC OPTIMIZATIONS
+   =================================== */
+
+/* iPhone SE, 5, 5S (320x568) */
+@media (min-width: 320px) and (max-width: 374px) {
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* iPhone 6, 7, 8 (375x667) */
+@media (min-width: 375px) and (max-width: 413px) {
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* iPhone 6+, 7+, 8+ (414x736) */
+@media (min-width: 414px) and (max-width: 767px) {
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* iPad / Lenovo M10 portrait (768x1024) */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  .homepage {
+    height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* iPad / Lenovo M10 landscape (1024x768) */
+@media (min-width: 1024px) and (max-width: 1365px) and (orientation: landscape) {
+  .homepage {
+    height: 100vh;
+  }
+
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* Laptop screens (1366x768, 1440x900) */
+@media (min-width: 1366px) and (max-width: 1919px) {
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* Full HD (1920x1080) */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* 2K / QHD (2560x1440) */
+@media (min-width: 2560px) and (max-width: 3839px) {
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* 4K / UHD (3840x2160) */
+@media (min-width: 3840px) {
+  .background-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* ===================================
+   SAFE AREA INSETS (iPhone X+, notches)
+   =================================== */
+
+@supports (padding: max(0px)) {
+  .homepage {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-top: max(0px, env(safe-area-inset-top));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* ===================================
+   PERFORMANCE & SMOOTH RENDERING
+   =================================== */
+
+.background-image {
+  /* Hardware acceleration */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+
+  /* Prevent flickering */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+
+  /* Image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+
+  /* Smooth transitions */
+  transition: none;
+}
+
+/* Prevent text selection and dragging */
+.background-image {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+/* ===================================
+   PRINT MEDIA
+   =================================== */
+
+@media print {
+  .homepage,
+  .hero-section {
+    width: 100%;
+    height: auto;
+  }
+
+  .background-image {
+    page-break-inside: avoid;
+  }
+}

@@ -1,0 +1,286 @@
+.thank-you-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a5e 0%, #2a2a7e 50%, #1a1a5e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.thank-you-content {
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-animation {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 32px;
+}
+
+.logo-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: logoEnter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  overflow: hidden;
+}
+
+@keyframes logoEnter {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.amman-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid rgba(198, 40, 40, 0.6);
+  animation: pulse 2s ease-out infinite;
+}
+
+.pulse-ring.delay-1 {
+  animation-delay: 0.4s;
+}
+
+.pulse-ring.delay-2 {
+  animation-delay: 0.8s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+.thank-you-text {
+  margin-bottom: 24px;
+}
+
+.thank-you-title {
+  font-family: Arial, sans-serif;
+  font-size: 3.3rem;
+  font-weight: 700;
+  color: #C62828;
+  margin: 0 0 8px 0;
+  text-shadow: 0 4px 20px rgba(198, 40, 40, 0.3);
+  animation: titleFade 0.8s ease 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes titleFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.thank-you-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 8px 0;
+  animation: textFade 0.8s ease 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.restaurant-name-container {
+  animation: textFade 0.8s ease 0.6s forwards;
+  opacity: 0;
+}
+
+.restaurant-name {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.restaurant-tagline {
+  font-family: Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #C62828;
+  margin: 4px 0 0 0;
+  letter-spacing: 1px;
+}
+
+.thank-you-message {
+  margin-bottom: 32px;
+  animation: textFade 0.8s ease 0.8s forwards;
+  opacity: 0;
+}
+
+.thank-you-message p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+}
+
+.thank-you-message .visit-again {
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  color: #C62828;
+  font-size: 1.45rem;
+}
+
+.sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.sparkle.s1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.sparkle.s2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 0.5s;
+}
+
+.sparkle.s3 {
+  bottom: 30%;
+  left: 8%;
+  animation-delay: 1s;
+}
+
+.sparkle.s4 {
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 1.5s;
+}
+
+.sparkle.s5 {
+  top: 50%;
+  left: 5%;
+  animation-delay: 2s;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+.redirect-notice {
+  animation: textFade 0.8s ease 1.2s forwards;
+  opacity: 0;
+}
+
+.redirect-notice p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .logo-animation {
+    width: 180px;
+    height: 180px;
+  }
+
+  .logo-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .amman-logo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .pulse-ring {
+    width: 180px;
+    height: 180px;
+  }
+
+  .thank-you-title {
+    font-size: 4.4rem;
+  }
+
+  .restaurant-name {
+    font-size: 2.4rem;
+  }
+
+  .restaurant-tagline {
+    font-size: 1.35rem;
+  }
+}

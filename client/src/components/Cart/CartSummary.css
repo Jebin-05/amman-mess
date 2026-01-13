@@ -1,0 +1,51 @@
+.cart-summary {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.summary-title {
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a5e;
+  margin: 0 0 16px 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 1.05rem;
+  color: #666;
+}
+
+.summary-row .free {
+  color: #C62828;
+  font-weight: 600;
+}
+
+.summary-savings {
+  background: #ffebee;
+  color: #C62828;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin: 8px 0;
+  text-align: center;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  margin-top: 12px;
+  border-top: 2px dashed #ddd;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a5e;
+}

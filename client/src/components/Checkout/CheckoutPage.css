@@ -1,0 +1,273 @@
+.checkout-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8eaf6 100%);
+  padding: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.checkout-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.checkout-header .back-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-header .back-btn svg {
+  width: 24px;
+  height: 24px;
+  color: #1a1a5e;
+}
+
+.checkout-header h1 {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a5e;
+  margin: 0;
+}
+
+.empty-checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.empty-checkout .empty-emoji {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.empty-checkout h3 {
+  font-family: Arial, sans-serif;
+  font-size: 1.7rem;
+  color: #1a1a5e;
+  margin: 0 0 12px 0;
+}
+
+.empty-checkout p {
+  color: #666;
+  margin: 0 0 24px 0;
+}
+
+.empty-checkout .browse-btn {
+  background: #C62828;
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checkout-content {
+  flex: 1;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.order-summary-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.order-summary-section h2 {
+  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a5e;
+  margin: 0 0 16px 0;
+}
+
+.order-items {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed #ddd;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.summary-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.summary-item-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.summary-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.summary-item-info .item-name {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  color: #1a1a5e;
+  font-size: 1.05rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.summary-item-info .item-qty {
+  display: block;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+.item-price {
+  color: #1a1a5e;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.order-totals {
+  padding-top: 8px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 1.05rem;
+  color: #666;
+}
+
+.total-row.grand-total {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a5e;
+  padding-top: 12px;
+  margin-top: 8px;
+  border-top: 2px solid #1a1a5e;
+}
+
+.checkout-footer {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.place-order-btn {
+  width: 100%;
+  background: #C62828;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: Arial, sans-serif;
+}
+
+.place-order-btn:hover {
+  background: #B71C1C;
+}
+
+@media (min-width: 768px) {
+  .checkout-header {
+    padding: 20px 24px;
+  }
+
+  .checkout-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .checkout-content {
+    padding: 24px;
+  }
+
+  .order-summary-section {
+    padding: 24px;
+  }
+
+  .checkout-footer {
+    max-width: 632px;
+    margin: 0 auto;
+    border-radius: 12px 12px 0 0;
+  }
+}
