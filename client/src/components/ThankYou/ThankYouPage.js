@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import './ThankYouPage.css';
 
 const ThankYouPage = () => {
-  const navigate = useNavigate();
-  const { endSession } = useCart();
+  const { endSession, navigate } = useCart();
 
   useEffect(() => {
     // End the session when this page loads
@@ -13,7 +11,7 @@ const ThankYouPage = () => {
 
     // Auto redirect to homepage after 5 seconds
     const timer = setTimeout(() => {
-      navigate('/');
+      navigate('home');
     }, 5000);
 
     return () => clearTimeout(timer);

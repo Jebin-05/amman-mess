@@ -1,16 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import CartItem from './CartItem';
 import CartSummary from './CartSummary';
 import './CartSidebar.css';
 
 const CartSidebar = ({ isOpen, onClose }) => {
-  const navigate = useNavigate();
-  const { items, itemCount, total } = useCart();
+  const { items, itemCount, total, navigate } = useCart();
 
   const handleCheckout = () => {
-    navigate('/checkout');
+    navigate('checkout');
   };
 
   return (

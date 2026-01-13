@@ -1,12 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 import './Homepage.css';
 
 const Homepage = () => {
-  const navigate = useNavigate();
+  const { navigate } = useCart();
 
   const handleStartOrdering = () => {
-    navigate('/menu');
+    navigate('menu');
   };
 
   return (

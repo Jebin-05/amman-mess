@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import './OrderConfirmation.css';
 
 const OrderConfirmation = () => {
-  const navigate = useNavigate();
   const {
     orderedItems,
     orderNumber,
     orderedSubtotal,
     cancelOrderedItem,
     decrementOrderedItem,
-    incrementOrderedItem
+    incrementOrderedItem,
+    navigate
   } = useCart();
 
   const [showCancelModal, setShowCancelModal] = useState(false);
 
   const handleContinueOrdering = () => {
-    navigate('/menu');
+    navigate('menu');
   };
 
   const handleEndOrdering = () => {
-    navigate('/thank-you');
+    navigate('thank-you');
   };
 
   if (orderedItems.length === 0) {
@@ -35,7 +34,7 @@ const OrderConfirmation = () => {
           <span className="emoji">🍽️</span>
           <h3>No orders yet</h3>
           <p>Place an order to see it here</p>
-          <button className="primary-btn" onClick={() => navigate('/menu')}>
+          <button className="primary-btn" onClick={() => navigate('menu')}>
             Browse Menu
           </button>
         </div>

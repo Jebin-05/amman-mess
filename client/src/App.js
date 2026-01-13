@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { CartProvider } from './context/CartContext';
+import { CartProvider, useCart } from './context/CartContext';
 import Homepage from './components/Homepage/Homepage';
 import MenuPage from './components/Menu/MenuPage';
 import CartPage from './components/Cart/CartPage';
@@ -9,21 +8,39 @@ import OrderConfirmation from './components/Order/OrderConfirmation';
 import ThankYouPage from './components/ThankYou/ThankYouPage';
 import './App.css';
 
+const AppContent = () => {
+  const { currentPage } = useCart();
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <Homepage />;
+      case 'menu':
+        return <MenuPage />;
+      case 'cart':
+        return <CartPage />;
+      case 'checkout':
+        return <CheckoutPage />;
+      case 'order-confirmation':
+        return <OrderConfirmation />;
+      case 'thank-you':
+        return <ThankYouPage />;
+      default:
+        return <Homepage />;
+    }
+  };
+
+  return (
+    <div className="App">
+      {renderPage()}
+    </div>
+  );
+};
+
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/menu" element={<MenuPage />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/order-confirmation" element={<OrderConfirmation />} />
-            <Route path="/thank-you" element={<ThankYouPage />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+      <AppContent />
     </CartProvider>
   );
 }

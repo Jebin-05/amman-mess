@@ -1,16 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import './CheckoutPage.css';
 
 const CheckoutPage = () => {
-  const navigate = useNavigate();
-  const { items, subtotal, placeOrder } = useCart();
+  const { items, subtotal, placeOrder, navigate } = useCart();
 
   const handlePlaceOrder = () => {
     if (items.length === 0) return;
     placeOrder();
-    navigate('/order-confirmation');
+    navigate('order-confirmation');
   };
 
   if (items.length === 0) {
@@ -24,7 +22,7 @@ const CheckoutPage = () => {
           <span className="empty-emoji">🛒</span>
           <h3>Your cart is empty</h3>
           <p>Add some items before checkout</p>
-          <button className="browse-btn" onClick={() => navigate('/menu')}>
+          <button className="browse-btn" onClick={() => navigate('menu')}>
             Browse Menu
           </button>
         </div>
@@ -39,7 +37,7 @@ const CheckoutPage = () => {
         style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/BG.JPG)` }}
       />
       <header className="checkout-header">
-        <button className="back-btn" onClick={() => navigate('/menu')}>
+        <button className="back-btn" onClick={() => navigate('menu')}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>

@@ -7,6 +7,7 @@ const initialState = {
   orderedItems: [],
   isCartOpen: false,
   orderNumber: null,
+  currentPage: 'home',
 };
 
 const cartReducer = (state, action) => {
@@ -150,6 +151,11 @@ const cartReducer = (state, action) => {
         ...state,
         isCartOpen: false,
       };
+    case 'NAVIGATE':
+      return {
+        ...state,
+        currentPage: action.payload,
+      };
     case 'LOAD_CART':
       return {
         ...state,
@@ -204,6 +210,7 @@ export const CartProvider = ({ children }) => {
     orderedItems: state.orderedItems,
     orderNumber: state.orderNumber,
     isCartOpen: state.isCartOpen,
+    currentPage: state.currentPage,
     itemCount,
     subtotal,
     taxes,
@@ -231,6 +238,7 @@ export const CartProvider = ({ children }) => {
     toggleCart: () => dispatch({ type: 'TOGGLE_CART' }),
     openCart: () => dispatch({ type: 'OPEN_CART' }),
     closeCart: () => dispatch({ type: 'CLOSE_CART' }),
+    navigate: (page) => dispatch({ type: 'NAVIGATE', payload: page }),
     getItemQuantity: (id) => {
       const item = state.items.find(item => item.id === id);
       return item ? item.quantity : 0;

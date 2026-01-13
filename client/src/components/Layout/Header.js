@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import './Header.css';
 
 const Header = ({ onSearchChange, searchQuery }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { itemCount, toggleCart } = useCart();
+  const { itemCount, toggleCart, navigate, currentPage } = useCart();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const handleLogoClick = () => {
-    navigate('/');
+    navigate('home');
   };
 
   const handleCartClick = () => {
     if (window.innerWidth < 768) {
-      navigate('/cart');
+      navigate('cart');
     } else {
       toggleCart();
     }
@@ -25,7 +22,7 @@ const Header = ({ onSearchChange, searchQuery }) => {
     setIsSearchOpen(!isSearchOpen);
   };
 
-  const isMenuPage = location.pathname === '/menu';
+  const isMenuPage = currentPage === 'menu';
 
   return (
     <header className="header">
@@ -35,7 +32,7 @@ const Header = ({ onSearchChange, searchQuery }) => {
             <img src="/logo.jpg" alt="Amman" className="logo-image" />
             <div className="logo-text-container">
               <span className="logo-text">Amman</span>
-              <span className="logo-tagline">Pure Veg Restaurant</span>
+              <span className="logo-tagline">Veg Restaurant</span>
             </div>
           </div>
         </div>
