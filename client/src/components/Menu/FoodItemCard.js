@@ -142,7 +142,10 @@ const FoodItemCard = ({ item, onItemClick }) => {
           <span className="veg-badge" title="Vegetarian">
             <span className="veg-dot"></span>
           </span>
-          <h3 className="food-name">{item.name}</h3>
+          <div className="food-name-container">
+            <h3 className="food-name">{item.name}</h3>
+            {item.tamilName && <span className="food-tamil-name">{item.tamilName}</span>}
+          </div>
         </div>
 
         <p className="food-description">{item.description}</p>

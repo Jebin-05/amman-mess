@@ -56,6 +56,8 @@ const MenuPage = () => {
         <FoodItemGrid
           items={filteredItems}
           onItemClick={handleItemClick}
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
         />
       </main>
 

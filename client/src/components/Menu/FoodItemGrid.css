@@ -1,3 +1,80 @@
+/* Food Grid Container */
+.food-grid-container {
+  width: 100%;
+}
+
+/* Category Header with Back Button */
+.category-header {
+  padding: 16px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.back-to-categories {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #C62828;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  margin: 0 0 12px -12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.back-to-categories:hover {
+  background: #fef2f2;
+  color: #B71C1C;
+}
+
+.back-to-categories svg {
+  transition: transform 0.2s ease;
+}
+
+.back-to-categories:hover svg {
+  transform: translateX(-3px);
+}
+
+.category-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category-header-title {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a5e;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-header-emoji {
+  font-size: 1.8rem;
+}
+
+.category-header-tamil {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.category-header-count {
+  font-size: 0.9rem;
+  color: #C62828;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Food Item Grid */
 .food-item-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -39,6 +116,18 @@
 }
 
 @media (min-width: 768px) {
+  .category-header {
+    padding: 20px 24px;
+  }
+
+  .category-header-title {
+    font-size: 1.8rem;
+  }
+
+  .category-header-emoji {
+    font-size: 2rem;
+  }
+
   .food-item-grid {
     grid-auto-rows: 380px;
     gap: 20px;
@@ -47,6 +136,10 @@
 }
 
 @media (min-width: 1024px) {
+  .category-header {
+    padding: 24px 32px;
+  }
+
   .food-item-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
@@ -61,6 +154,12 @@
 }
 
 @media (min-width: 1440px) {
+  .category-header {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px 40px;
+  }
+
   .food-item-grid {
     max-width: 1400px;
     margin: 0 auto;
