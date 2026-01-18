@@ -19,6 +19,31 @@
 
 .header-left {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.table-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #fff8f0 0%, #fff5e6 100%);
+  border: 1px solid #FFA500;
+  border-radius: 20px;
+  margin-left: 8px;
+}
+
+.table-icon {
+  font-size: 0.9rem;
+}
+
+.table-info {
+  color: #1a1a5e;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .logo {
@@ -202,6 +227,13 @@
   border-color: #FFA500;
 }
 
+/* Hide table badge on very small screens */
+@media (max-width: 400px) {
+  .table-badge {
+    display: none;
+  }
+}
+
 /* Tablet and up */
 @media (min-width: 768px) {
   .header-content {
@@ -226,6 +258,14 @@
 
   .logo-tagline {
     font-size: 0.85rem;
+  }
+
+  .table-badge {
+    padding: 8px 14px;
+  }
+
+  .table-info {
+    font-size: 0.8rem;
   }
 }
 

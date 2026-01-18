@@ -3,7 +3,7 @@ import { useCart } from '../../context/CartContext';
 import './Header.css';
 
 const Header = ({ onSearchChange, searchQuery }) => {
-  const { itemCount, toggleCart, navigate, currentPage } = useCart();
+  const { itemCount, toggleCart, navigate, currentPage, tableNumber, guestCount } = useCart();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const handleLogoClick = () => {
@@ -35,6 +35,12 @@ const Header = ({ onSearchChange, searchQuery }) => {
               <span className="logo-tagline">Veg Restaurant</span>
             </div>
           </div>
+          {tableNumber && (
+            <div className="table-badge">
+              <span className="table-icon">🍽️</span>
+              <span className="table-info">T{tableNumber} · {guestCount} guest{guestCount > 1 ? 's' : ''}</span>
+            </div>
+          )}
         </div>
 
         {isMenuPage && (

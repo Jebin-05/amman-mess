@@ -4,6 +4,7 @@ import CategoryFilter from './CategoryFilter';
 import FoodItemGrid from './FoodItemGrid';
 import CartSidebar from '../Cart/CartSidebar';
 import ItemDetailsModal from '../common/ItemDetailsModal';
+import VoiceAssistantViz from '../VoiceAssistant/VoiceAssistantViz';
 import { menuItems } from '../../data/menuData';
 import { useCart } from '../../context/CartContext';
 import './MenuPage.css';
@@ -56,6 +57,8 @@ const MenuPage = () => {
         <FoodItemGrid
           items={filteredItems}
           onItemClick={handleItemClick}
+          selectedCategory={selectedCategory}
+          onCategoryChange={setSelectedCategory}
         />
       </main>
 
@@ -67,6 +70,8 @@ const MenuPage = () => {
           onClose={handleCloseModal}
         />
       )}
+
+      <VoiceAssistantViz />
     </div>
   );
 };

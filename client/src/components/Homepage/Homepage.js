@@ -6,7 +6,7 @@ const Homepage = () => {
   const { navigate } = useCart();
 
   const handleStartOrdering = () => {
-    navigate('menu');
+    navigate('table-booking');
   };
 
   return (
