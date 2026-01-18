@@ -8,6 +8,8 @@ const initialState = {
   isCartOpen: false,
   orderNumber: null,
   currentPage: 'home',
+  tableNumber: null,
+  guestCount: null,
 };
 
 const cartReducer = (state, action) => {
@@ -135,6 +137,14 @@ const cartReducer = (state, action) => {
         items: [],
         orderedItems: [],
         orderNumber: null,
+        tableNumber: null,
+        guestCount: null,
+      };
+    case 'SET_TABLE':
+      return {
+        ...state,
+        tableNumber: action.payload.tableNumber,
+        guestCount: action.payload.guestCount,
       };
     case 'TOGGLE_CART':
       return {
@@ -162,6 +172,8 @@ const cartReducer = (state, action) => {
         items: action.payload.items || [],
         orderedItems: action.payload.orderedItems || [],
         orderNumber: action.payload.orderNumber || null,
+        tableNumber: action.payload.tableNumber || null,
+        guestCount: action.payload.guestCount || null,
       };
     default:
       return state;
@@ -190,8 +202,10 @@ export const CartProvider = ({ children }) => {
       items: state.items,
       orderedItems: state.orderedItems,
       orderNumber: state.orderNumber,
+      tableNumber: state.tableNumber,
+      guestCount: state.guestCount,
     }));
-  }, [state.items, state.orderedItems, state.orderNumber]);
+  }, [state.items, state.orderedItems, state.orderNumber, state.tableNumber, state.guestCount]);
 
   // Computed values for current cart
   const itemCount = state.items.reduce((sum, item) => sum + item.quantity, 0);
@@ -211,6 +225,8 @@ export const CartProvider = ({ children }) => {
     orderNumber: state.orderNumber,
     isCartOpen: state.isCartOpen,
     currentPage: state.currentPage,
+    tableNumber: state.tableNumber,
+    guestCount: state.guestCount,
     itemCount,
     subtotal,
     taxes,
@@ -235,6 +251,7 @@ export const CartProvider = ({ children }) => {
     decrementOrderedItem: (id) => dispatch({ type: 'DECREMENT_ORDERED_ITEM', payload: id }),
     incrementOrderedItem: (id) => dispatch({ type: 'INCREMENT_ORDERED_ITEM', payload: id }),
     endSession: () => dispatch({ type: 'END_SESSION' }),
+    setTable: (tableNumber, guestCount) => dispatch({ type: 'SET_TABLE', payload: { tableNumber, guestCount } }),
     toggleCart: () => dispatch({ type: 'TOGGLE_CART' }),
     openCart: () => dispatch({ type: 'OPEN_CART' }),
     closeCart: () => dispatch({ type: 'CLOSE_CART' }),

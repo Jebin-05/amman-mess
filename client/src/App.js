@@ -1,6 +1,7 @@
 import React from 'react';
 import { CartProvider, useCart } from './context/CartContext';
 import Homepage from './components/Homepage/Homepage';
+import TableBooking from './components/TableBooking/TableBooking';
 import MenuPage from './components/Menu/MenuPage';
 import CartPage from './components/Cart/CartPage';
 import CheckoutPage from './components/Checkout/CheckoutPage';
@@ -15,6 +16,8 @@ const AppContent = () => {
     switch (currentPage) {
       case 'home':
         return <Homepage />;
+      case 'table-booking':
+        return <TableBooking />;
       case 'menu':
         return <MenuPage />;
       case 'cart':
