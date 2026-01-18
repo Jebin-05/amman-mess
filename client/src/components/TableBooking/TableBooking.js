@@ -55,9 +55,9 @@ const TableBooking = () => {
 
       <div className="booking-content">
         <div className="table-layout">
-          {/* Sofa A - Top */}
+          {/* Sofa A - Top (flipped) */}
           <div
-            className={`sofa ${selectedSofas.includes('A') ? 'selected' : ''}`}
+            className={`sofa sofa-top ${selectedSofas.includes('A') ? 'selected' : ''}`}
             onClick={() => toggleSofa('A')}
           >
             <span className="sofa-label">A</span>
