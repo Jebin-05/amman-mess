@@ -5,7 +5,7 @@
 
 /* Category Header with Back Button */
 .category-header {
-  padding: 16px;
+  padding: 10px 16px;
   background: white;
   border-bottom: 1px solid #eee;
 }
@@ -13,17 +13,17 @@
 .back-to-categories {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: none;
   border: none;
   color: #C62828;
   font-family: Arial, sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 8px 12px;
-  margin: 0 0 12px -12px;
-  border-radius: 8px;
+  padding: 4px 8px;
+  margin: 0 0 6px -8px;
+  border-radius: 6px;
   transition: all 0.2s ease;
 }
 
@@ -43,35 +43,35 @@
 .category-header-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .category-header-title {
   font-family: Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #1a1a5e;
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .category-header-emoji {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .category-header-tamil {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: #666;
   font-weight: 500;
 }
 
 .category-header-count {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #C62828;
   font-weight: 600;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 /* Food Item Grid */
@@ -81,6 +81,7 @@
   grid-auto-rows: 320px;
   gap: 16px;
   padding: 16px;
+  padding-bottom: 70px;
 }
 
 .empty-state {
@@ -117,15 +118,15 @@
 
 @media (min-width: 768px) {
   .category-header {
-    padding: 20px 24px;
+    padding: 12px 24px;
   }
 
   .category-header-title {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .category-header-emoji {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .food-item-grid {
@@ -137,7 +138,7 @@
 
 @media (min-width: 1024px) {
   .category-header {
-    padding: 24px 32px;
+    padding: 14px 32px;
   }
 
   .food-item-grid {
@@ -157,7 +158,7 @@
   .category-header {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 24px 40px;
+    padding: 14px 40px;
   }
 
   .food-item-grid {

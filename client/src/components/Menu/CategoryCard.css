@@ -113,6 +113,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   padding: 16px;
+  padding-bottom: 70px;
 }
 
 .category-grid-title {
